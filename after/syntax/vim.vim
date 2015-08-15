@@ -1,6 +1,6 @@
 " Vim syntax file
-" Language:	Vim help file
 
+" Based on the vim help syntax
 if has("ebcdic")
   syn match vimHelpHyperTextJump	"\\\@<!|[^"*|]\+|" contains=vimHelpBar
   syn match vimHelpHyperTextEntry	"\*[^"*|]\+\*\s"he=e-1 contains=vimHelpStar
@@ -17,8 +17,8 @@ syn cluster vimCommentGroup	contains=vimHelpHyperTextJump,vimHelpHyperTextEntry
 
 " Define the default highlighting.
 " Only used when an item doesn't have highlighting yet
-hi def link vimHelpIgnore		Ignore
-hi def link vimHelpHyperTextJump	Identifier
+hi def link vimHelpHyperTextJump	Subtitle
 hi def link vimHelpBar		Ignore
 hi def link vimHelpStar		Ignore
 hi def link vimHelpHyperTextEntry	String
+hi def link Subtitle		Identifier
