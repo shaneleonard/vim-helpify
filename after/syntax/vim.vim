@@ -18,7 +18,7 @@ syn cluster vimCommentGroup	contains=vimHelpHyperTextJump,vimHelpHyperTextEntry
 " Define the default highlighting.
 " Only used when an item doesn't have highlighting yet
 hi def link vimHelpIgnore		Ignore
-hi def link vimHelpHyperTextJump	Subtitle
+hi def link vimHelpHyperTextJump	Identifier
 hi def link vimHelpBar		Ignore
 hi def link vimHelpStar		Ignore
 hi def link vimHelpHyperTextEntry	String
