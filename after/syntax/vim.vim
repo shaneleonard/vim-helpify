@@ -13,6 +13,8 @@ endif
 syn match vimHelpBar		contained "|" conceal
 syn match vimHelpStar		contained "\*" conceal
 
+syn cluster vimCommentGroup	contains=vimHelpHyperTextJump,vimHelpHyperTextEntry
+
 " Define the default highlighting.
 " Only used when an item doesn't have highlighting yet
 hi def link vimHelpIgnore		Ignore
