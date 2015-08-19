@@ -49,11 +49,12 @@ for helpify_file in g:vim_helpify_files
         endif
     endif
 
-    execute "autocmd! BufWritePost " . helpify_file . " :helptags " . g:vim_helpify_tags_dir
-    execute "autocmd! BufWinEnter " . helpify_file . " :setlocal tags+=" . g:vim_helpify_tags_dir . "tags"
+    execute "autocmd BufWritePost " . helpify_file . " :helptags " . g:vim_helpify_tags_dir
+    execute "autocmd BufWinEnter " . helpify_file . " :setlocal tags+=" . g:vim_helpify_tags_dir . "tags"
+    execute "autocmd BufWinEnter " . helpify_file . " :echo \"Helpify tags found for this file.\""
 
 endfor
 
 execute "augroup END"
 
-execute ":helptags " . g:vim_helpify_tags_dir
+execute "helptags " . g:vim_helpify_tags_dir
