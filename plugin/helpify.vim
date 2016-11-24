@@ -1,5 +1,5 @@
 if !exists("g:vim_helpify_tags_dir")
-    let g:vim_helpify_tags_dir = "~/.vim/bundle/vim-helpify/tags/"
+    let g:vim_helpify_tags_dir = "~/.vim/bundle/vim-helpify/doc/"
 endif
 
 
