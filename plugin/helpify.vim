@@ -8,12 +8,12 @@ if !exists("g:vim_helpify_files")
 endif
 
 if !exists("*mkdir")
-    echom "Vim-Helpify: Error: This version of vim is missing support for mkdir." 
+    echoerr "Vim-Helpify: Error: This version of vim is missing support for mkdir." 
     finish
 endif
 
 if !exists("*sha256")
-    echom "Vim-Helpify: Error: Vim must be compiled with +cryptv feature."
+    echoerr "Vim-Helpify: Error: Vim must be compiled with +cryptv feature."
     finish
 endif
 
@@ -45,13 +45,12 @@ for helpify_file in g:vim_helpify_files
     if !filereadable(helpify_link)
         call system("ln -s " . helpify_file . " " . helpify_link)
         if v:shell_error
-            echom "Error creating symlink " . helpify_link . " to file " . helpify_file
+            echoerr "Error creating symlink " . helpify_link . " to file " . helpify_file
         endif
     endif
 
     execute "autocmd BufWritePost " . helpify_file . " :helptags " . g:vim_helpify_tags_dir
     execute "autocmd BufWinEnter " . helpify_file . " :setlocal tags+=" . g:vim_helpify_tags_dir . "tags"
-    execute "autocmd BufWinEnter " . helpify_file . " :echo \"Helpify tags found for this file.\""
 
 endfor
 
